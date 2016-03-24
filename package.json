@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "babel --presets babel-preset-react src --out-file bundle.js",
+    "compile:watch": "babel --presets babel-preset-react src --out-file bundle.js --watch"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "moment": "^2.12.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-preset-react": "^6.5.0"
   }
 }

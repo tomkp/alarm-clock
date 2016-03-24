@@ -10,38 +10,30 @@ class Timer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: moment(),
-            blink: true
+            time: moment()
         };
     }
     tick() {
         this.setState({
-            time: moment(),
-            blink: !this.state.blink
+            time: moment()
         });
     }
     componentDidMount() {
         setInterval(() => { this.tick() }, 500); // Call a method on the mixin
     }
     render() {
-        const hour = Number(this.state.time.format('hh'));
+        const hour = Number(this.state.time.format('ss'));
+        const isDay = (hour > 7 && hour < 19);
+        const className = 'timer ' + (isDay?'day':'night');
         return (
-            <div>
-                {(hour > 19 && hour < 7)}
-                <time>
-                    {this.state.time.format('h')}
-                    <span className={this.state.blink?'on':'off'}>:</span>
-                    {this.state.time.format('mm')}
-                    <span className={this.state.blink?'on':'off'}>:</span>
-                    {this.state.time.format('ss')}
-                </time>
+            <div className={className}>
+                <time>{this.state.time.format('h:mm:ss')}</time>
             </div>
         );
     }
 }
 //const Colon = ({time}) => {return <span className={}>:</span>};
+//const App = () => {return <div><Timer /></div>};
 
-const App = () => {return <div><Timer /></div>};
 
-
-render(<App />, document.getElementById('root'));
+render(<Timer />, document.getElementById('root'));

@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node server.js",
+    "compile": "webpack",
     "deploy": "webpack && surge dist clock.surge.sh"
   },
   "keywords": [],

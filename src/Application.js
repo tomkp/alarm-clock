@@ -22,7 +22,7 @@ class Timer extends React.Component {
         setInterval(() => { this.tick() }, 500); // Call a method on the mixin
     }
     render() {
-        const hour = Number(this.state.time.format('ss'));
+        const hour = Number(this.state.time.format('hh'));
         const isDay = (hour > 7 && hour < 19);
         const className = 'timer ' + (isDay?'day':'night');
         return (

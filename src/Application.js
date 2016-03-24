@@ -29,12 +29,16 @@ class Timer extends React.Component {
         return (
             <div className={'timer ' + (isDay?'day':'night')}>
                 <time className={(this.state.blink?'on':'off')}>{this.state.time.format('h')}</time>
+                <Progress minute={this.state.time.format('m')}/>
             </div>
         );
     }
 }
-//const Colon = ({time}) => {return <span className={}>:</span>};
-//const App = () => {return <div><Timer /></div>};
+const Progress = ({minute}) => {
+    const width = (Math.round(100 * minute / 60 ) + '%');
+    console.log(`width ${width}`);
+    return <div className="progress" style={{width: width}}></div>
+};
 
 
 render(<Timer />, document.getElementById('root'));

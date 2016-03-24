@@ -33,19 +33,25 @@ time {
   height: 7vw;
 }
 
+$night-color: #444;
+$night-background: #111;
+$day-color: #eee;
+$day-background: #2ECC40;
+
+
 .night {
-  background: #111;
-  color: #222;
+  background: $night-background;
+  color: $night-color;
   .progress {
-    background: #222;
+    background: $night-color;
   }
 }
 
 .day {
-  background: #2ECC40;
-  color: #eee;
+  background: $day-background;
+  color: $day-color;
   .progress {
-    background: #eee;
+    background: $day-color;
   }
 }
 

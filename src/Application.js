@@ -24,8 +24,9 @@ class Timer extends React.Component {
         setInterval(() => { this.tick() }, 500); // Call a method on the mixin
     }
     render() {
-        const hour = Number(this.state.time.format('hh'));
-        const isDay = (hour > 7 && hour < 19);
+        const hour = Number(this.state.time.format('HH'));
+        console.info(`hour ${hour}`);
+        const isDay = (hour >= 7 && hour <= 19);
         return (
             <div className={'timer ' + (isDay?'day':'night')}>
                 <time className={(this.state.blink?'on':'off')}>{this.state.time.format('h')}</time>
@@ -36,7 +37,6 @@ class Timer extends React.Component {
 }
 const Progress = ({minute}) => {
     const width = (Math.round(100 * minute / 60 ) + '%');
-    console.log(`width ${width}`);
     return <div className="progress" style={{width: width}}></div>
 };
 

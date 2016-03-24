@@ -9,25 +9,37 @@ import moment from 'moment';
 class Timer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { time: moment() };
+        this.state = {
+            time: moment(),
+            blink: true
+        };
     }
     tick() {
-        this.setState({ time: moment() });
+        this.setState({
+            time: moment(),
+            blink: !this.state.blink
+        });
     }
     componentDidMount() {
-        setInterval(() => { this.tick() }, 1000); // Call a method on the mixin
+        setInterval(() => { this.tick() }, 500); // Call a method on the mixin
     }
     render() {
         const hour = Number(this.state.time.format('hh'));
         return (
             <div>
                 {(hour > 19 && hour < 7)}
-                <Time time={this.state.time.format('h:mm:ss')} />
+                <time>
+                    {this.state.time.format('h')}
+                    <span className={this.state.blink?'on':'off'}>:</span>
+                    {this.state.time.format('mm')}
+                    <span className={this.state.blink?'on':'off'}>:</span>
+                    {this.state.time.format('ss')}
+                </time>
             </div>
         );
     }
 }
-const Time = ({time}) => {return <time>{time}</time>};
+//const Colon = ({time}) => {return <span className={}>:</span>};
 
 const App = () => {return <div><Timer /></div>};
 

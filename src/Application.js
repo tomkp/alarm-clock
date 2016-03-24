@@ -12,26 +12,24 @@ class Timer extends React.Component {
         this.state = { time: moment() };
     }
     tick() {
-        console.log(`tick`);
-
         this.setState({ time: moment() });
     }
     componentDidMount() {
         setInterval(() => { this.tick() }, 1000); // Call a method on the mixin
     }
     render() {
-        const hour = moment('HH');
+        const hour = Number(this.state.time.format('hh'));
         return (
             <div>
                 {(hour > 19 && hour < 7)}
-                [{this.state.time.format('hh:mm:ss')}]
+                <Time time={this.state.time.format('h:mm:ss')} />
             </div>
         );
     }
 }
 const Time = ({time}) => {return <time>{time}</time>};
 
-const App = () => {return <div><Timer /><Time time={moment().format('h:mm')} /></div>};
+const App = () => {return <div><Timer /></div>};
 
 
 render(<App />, document.getElementById('root'));

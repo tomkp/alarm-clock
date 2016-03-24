@@ -10,12 +10,14 @@ class Timer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: moment()
+            time: moment(),
+            blink: false
         };
     }
     tick() {
         this.setState({
-            time: moment()
+            time: moment(),
+            blink: !this.state.blink
         });
     }
     componentDidMount() {
@@ -24,10 +26,9 @@ class Timer extends React.Component {
     render() {
         const hour = Number(this.state.time.format('hh'));
         const isDay = (hour > 7 && hour < 19);
-        const className = 'timer ' + (isDay?'day':'night');
         return (
-            <div className={className}>
-                <time>{this.state.time.format('h')}</time>
+            <div className={'timer ' + (isDay?'day':'night')}>
+                <time className={(this.state.blink?'on':'off')}>{this.state.time.format('h')}</time>
             </div>
         );
     }

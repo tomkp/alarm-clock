@@ -27,7 +27,7 @@ class Timer extends React.Component {
         const className = 'timer ' + (isDay?'day':'night');
         return (
             <div className={className}>
-                <time>{this.state.time.format('h:mm:ss')}</time>
+                <time>{this.state.time.format('h')}</time>
             </div>
         );
     }

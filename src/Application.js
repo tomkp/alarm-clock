@@ -17,7 +17,7 @@ class Timer extends React.Component {
     tick() {
         this.setState({
             time: moment(),
-            blink: !this.state.blink
+            //blink: !this.state.blink
         });
     }
     componentDidMount() {

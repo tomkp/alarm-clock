@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "compile": "webpack",
-    "deploy": "webpack && surge dist clock.surge.sh"
+    "deploy": "webpack && surge dist alarm-clock.surge.sh"
   },
   "keywords": [],
   "author": "tom@tomkp.com",

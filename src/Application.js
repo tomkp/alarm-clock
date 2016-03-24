@@ -25,7 +25,6 @@ class Timer extends React.Component {
     }
     render() {
         const hour = Number(this.state.time.format('HH'));
-        console.info(`hour ${hour}`);
         const isDay = (hour >= 7 && hour <= 19);
         return (
             <div className={'timer ' + (isDay?'day':'night')}>

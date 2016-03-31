@@ -25,9 +25,11 @@ class Timer extends React.Component {
     }
     render() {
         const hour = Number(this.state.time.format('HH'));
+        const isMorning = (hour >= 6 && hour < 7);
         const isDay = (hour >= 7 && hour <= 19);
+        const isEvening = (hour > 19 && hour < 20);
         return (
-            <div className={'timer ' + (isDay?'day':'night')}>
+        <div className={'timer ' + (isMorning?'morning':'') + (isDay?'day':'night') + (isEvening?'evening':'')}>
                 <time className={(this.state.blink?'on':'off')}>{this.state.time.format('h')}</time>
                 <Progress minute={this.state.time.format('m')}/>
             </div>

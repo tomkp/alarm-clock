@@ -15,7 +15,7 @@ class Timer extends React.Component {
     }
     tick() {
         this.setState({
-            //time: moment('19:15', 'HH:mm')
+            //time: moment('06:15', 'HH:mm')
             time: moment()
         });
     }

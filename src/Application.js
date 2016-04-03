@@ -23,7 +23,6 @@ class Timer extends React.Component {
         setInterval(() => { this.tick() }, 500); // Call a method on the mixin
     }
     render() {
-
         return <Display time={this.state.time}/>
     }
 }

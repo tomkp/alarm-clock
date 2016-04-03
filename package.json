@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node server.js",
+    "start": "webpack && node server.js",
     "compile": "webpack",
     "deploy": "webpack && surge dist alarm-clock.surge.sh"
   },

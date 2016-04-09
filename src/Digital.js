@@ -21,7 +21,7 @@ export default ({time}) => {
     //console.log(`${hour24} is ${timeOfDay}`);
 
     return (
-        <div className={'timer ' + timeOfDay}>
+        <div className={'Digital ' + timeOfDay}>
             <time>{hour12}</time>
         </div>
     );

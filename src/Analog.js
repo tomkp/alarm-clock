@@ -16,7 +16,7 @@ export default ({time}) => {
     const hour = `rotate(${360 * hours})`;
 
     return (
-        <div className="clock">
+        <div className="Analog">
             <div className="square">
                 <svg viewBox="0 0 120 120">
                     <g transform="translate(60, 60)">

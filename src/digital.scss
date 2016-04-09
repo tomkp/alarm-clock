@@ -1,20 +1,24 @@
 
+.Digital {
 
-.timer {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-time {
   font-family: 'abel', sans-serif;
   display: block;
   text-align: center;
-  //font-size: 60vh;
+
   //line-height: 1;
   //flex: 1;
-  font-size: 12rem;
-}
 
+  flex: 1;
+
+  //line-height: 12rem;
+  //font-size: 12rem;
+
+  font-size: 60vh;
+  line-height: 80vh;
+
+
+  time {
+
+  }
+
+}

@@ -46,8 +46,10 @@ class Timer extends React.Component {
 
         return (
             <div className={'timer ' + timeOfDay}>
-                <Analog time={this.state.time} />
-                <Digital time={this.state.time} />
+                <div className="qqq">
+                    <Analog time={this.state.time} />
+                    <Digital time={this.state.time} />
+                </div>
                 <Progress minute={minute}/>
             </div>
         );

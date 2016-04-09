@@ -5,6 +5,9 @@ import React from 'react';
 import {render} from 'react-dom';
 import moment from 'moment';
 
+import Analog from './Analog';
+import Digital from './Digital';
+
 
 class Timer extends React.Component {
     constructor(props) {
@@ -23,34 +26,33 @@ class Timer extends React.Component {
         setInterval(() => { this.tick() }, 500); // Call a method on the mixin
     }
     render() {
-        return <Display time={this.state.time}/>
+        //return <Display time={this.state.time}/>
+        //return <Analog time={this.state.time} />
+
+        const time = this.state.time;
+
+        const hour24 = Number(time.format('HH'));
+        const hour12 = Number(time.format('h'));
+        const minute = time.format('m');
+
+        const isMorning = (hour24 >= 6 && hour24 < 7);
+        const isDay = (hour24 >= 7 && hour24 < 19);
+        const isEvening = (hour24 >= 19 && hour24 < 20);
+
+        const timeOfDay =
+            (isMorning ? 'morning ' :
+                (isDay ? 'day ' :
+                    (isEvening ? 'evening ' : 'night ')));
+
+        return (
+            <div className={'timer ' + timeOfDay}>
+                <Analog time={this.state.time} />
+                <Digital time={this.state.time} />
+                <Progress minute={minute}/>
+            </div>
+        );
     }
 }
-
-const Display = ({time}) => {
-
-    const hour24 = Number(time.format('HH'));
-    const hour12 = Number(time.format('h'));
-    const minute = time.format('m');
-
-    const isMorning = (hour24 >= 6 && hour24 < 7);
-    const isDay = (hour24 >= 7 && hour24 < 19);
-    const isEvening = (hour24 >= 19 && hour24 < 20);
-
-    const timeOfDay =
-        (isMorning ? 'morning ' :
-            (isDay ? 'day ' :
-                (isEvening ? 'evening ' : 'night ')));
-
-    //console.log(`${hour24} is ${timeOfDay}`);
-
-    return (
-        <div className={'timer ' + timeOfDay}>
-            <time>{hour12}</time>
-            <Progress minute={minute}/>
-        </div>
-    );
-};
 
 
 const Progress = ({minute}) => {

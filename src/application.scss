@@ -12,20 +12,6 @@
   justify-content: center;
 }
 
-.timer {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-time {
-  font-family: 'abel', sans-serif;
-  display: block;
-  text-align: center;
-  font-size: 60vh;
-  line-height: 1;
-  flex: 1;
-}
 
 .progress {
   height: 10vh;
@@ -38,7 +24,7 @@ $morning-background: #000;
 $day-color: #999;
 $day-background: #000;
 
-$evening-color: #666;
+$evening-color: #555;
 $evening-background: #000;
 
 $night-color: #222;
@@ -48,6 +34,7 @@ $night-background: #000;
 .morning {
   background: $morning-background;
   color: $morning-color;
+  stroke: $morning-color;
   .progress {
     background: $morning-color;
   }
@@ -56,6 +43,7 @@ $night-background: #000;
 .day {
   background: $day-background;
   color: $day-color;
+  stroke: $day-color;
   .progress {
     background: $day-color;
   }
@@ -64,6 +52,7 @@ $night-background: #000;
 .evening {
   background: $evening-background;
   color: $evening-color;
+  stroke: $evening-color;
   .progress {
     background: $evening-color;
   }
@@ -72,6 +61,7 @@ $night-background: #000;
 .night {
   background: $night-background;
   color: $night-color;
+  stroke: $night-color;
   .progress {
     background: $night-color;
   }

@@ -49,9 +49,9 @@ export default ({time}) => {
                         <line className="major" y1="44" y2="48" transform="rotate(300)"> </line>
                         <line className="major" y1="44" y2="48" transform="rotate(330)"> </line>
 
-                        <line className="hour" y1="2" y2="-25" transform={hour}> </line>
+                        <line className="hour" y1="1" y2="-25" transform={hour}> </line>
 
-                        <line className="minute" y1="4" y2="-32" transform={minute}> </line>
+                        <line className="minute" y1="1" y2="-32" transform={minute}> </line>
 
                         <g transform={second}>
                             <line className="second" y1="10" y2="-38"> </line>

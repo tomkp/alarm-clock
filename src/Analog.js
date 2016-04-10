@@ -7,7 +7,8 @@ export default ({time}) => {
 
     const seconds = Number(time.format('s') / 60);
     const minutes = Number(time.format('m') / 60);
-    const hours = (Number(time.format('h')) + minutes) / 12;
+    //const hours = (Number(time.format('h')) + minutes) / 12;
+    const hours = Number(time.format('h')) / 12;
 
     //console.log(`${hours} ${minutes} ${seconds}`);
 

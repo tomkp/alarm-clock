@@ -22,7 +22,9 @@ export default ({time}) => {
 
     return (
         <div className={'Digital ' + timeOfDay}>
-            <time>{hour12}</time>
+            <span className="hour">{hour12}</span>
+            :
+            <span className="minute">{time.format('mm')}</span>
         </div>
     );
 };

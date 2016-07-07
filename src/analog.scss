@@ -2,14 +2,16 @@
 
 .Analog {
 
-  flex: .5;
+  display: flex;
+  flex: 1;
 
 
   .square {
-    position: relative;
+    //position: relative;
     width: 100%;
     //height: 100%;
-    padding-bottom: 100%;
+    //padding-bottom: 100%;
+    display: flex;
   }
 
   svg {

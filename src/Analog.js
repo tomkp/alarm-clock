@@ -31,26 +31,26 @@ export default ({time}) => {
                         { new Array(12).fill('').map((_, index) => {
                             const rotation = `rotate(${(index + 1) * 360 / 12})`;
                             const x = index < 9?-20:-45;
-                            return <text className="xxx" x={x} y="-350" transform={rotation}>{index + 1}</text>
+                            return <text key={index} className="xxx" x={x} y="-350" transform={rotation}>{index + 1}</text>
                         })}
 
                         { new Array(60).fill('').map((_, index) => {
                             const rotation = `rotate(${index * 360 / 60})`;
-                            return <line className="minutes" y1={y1} y2={y1 + size} transform={rotation} stroke-linecap="round"> </line>
+                            return <line key={index} className="minutes" y1={y1} y2={y1 + size} transform={rotation} > </line>
                         })}
 
                         { new Array(12).fill('').map((_, index) => {
                             const rotation = `rotate(${index * 360 / 12})`;
-                            return <line className="hours" y1={y1} y2={y1 + size}  transform={rotation} stroke-linecap="round"> </line>
+                            return <line key={index} className="hours" y1={y1} y2={y1 + size}  transform={rotation}> </line>
                         })}
 
-                        <line className="hour" y1="10" y2="-250" transform={hour} stroke-linecap="round"> </line>
+                        <line className="hour" y1="10" y2="-250" transform={hour}> </line>
 
-                        <line className="minute" y1="10" y2="-320" transform={minute} stroke-linecap="round"> </line>
+                        <line className="minute" y1="10" y2="-320" transform={minute}> </line>
 
                         <g transform={second}>
-                            <line className="second" y1="100" y2="-380" stroke-linecap="round"> </line>
-                            <line className="second-counterweight" y1="100" y2="20" stroke-linecap="round"> </line>
+                            <line className="second" y1="100" y2="-380"> </line>
+                            <line className="second-counterweight" y1="100" y2="20"> </line>
                         </g>
                     </g>
                 </svg>

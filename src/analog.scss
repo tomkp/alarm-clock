@@ -37,30 +37,30 @@
   }
 
   .hours {
-    stroke: rgba(1, 255, 112, 1);
-    //stroke: #fff;
+    //stroke: rgba(1, 255, 112, 1);
+    stroke: #fff;
     stroke-width: 12;
     stroke-linecap: round;
   }
 
   .minutes {
-    stroke: rgba(1, 255, 112, .25);
-    //stroke: #333;
+    //stroke: rgba(1, 255, 112, .25);
+    stroke: #333;
     stroke-width: 12;
     stroke-linecap: round;
   }
 
   .hour {
     stroke: rgba(255, 255, 255, .5);
-    stroke: rgba(1, 255, 112, .8);
+    //stroke: rgba(1, 255, 112, .8);
     stroke-linecap: round;
     stroke-width: 12;
   }
 
   .minute {
     stroke-linecap: round;
-    //stroke: rgba(255, 255, 255, .5);
-    stroke: rgba(1, 255, 112, .8);
+    stroke: rgba(255, 255, 255, .5);
+    //stroke: rgba(1, 255, 112, .8);
     stroke-width: 4;
   }
 
@@ -75,7 +75,7 @@
 
   .xxx {
     fill: rgba(255, 255, 255, .5);
-    fill: rgba(1, 255, 112, .8);
+    //fill: rgba(1, 255, 112, .8);
     stroke: transparent;
     //fill: #01FF70;
     //fill: rgba(231, 76, 60, .5);

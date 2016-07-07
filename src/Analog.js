@@ -16,47 +16,41 @@ export default ({time}) => {
     const minute = `rotate(${(360 * minutes)})`;
     const hour = `rotate(${360 * hours})`;
 
+    const y1 = 440;
+    const size = 10;
+
+    //
     return (
         <div className="Analog">
             <div className="square">
-                <svg viewBox="0 0 120 120">
-                    <g transform="translate(60, 60)">
-                        <circle className="clock-face" r="48"> </circle>
+                <svg viewBox="0 0 1200 1200">
+                    <g transform="translate(600, 600)">
 
-                        <text className="xxx" x="-4" y="-35" transform="rotate(0)">12</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(30)">1</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(60)">2</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(90)">3</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(120)">4</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(150)">5</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(180)">6</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(210)">7</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(240)">8</text>
-                        <text className="xxx" x="-2" y="-35" transform="rotate(270)">9</text>
-                        <text className="xxx" x="-4" y="-35" transform="rotate(300)">10</text>
-                        <text className="xxx" x="-4" y="-35" transform="rotate(330)">11</text>
+                        <circle className="clock-face" r="480"> </circle>
 
+                        { new Array(12).fill('').map((_, index) => {
+                            const rotation = `rotate(${(index + 1) * 360 / 12})`;
+                            const x = index < 9?-20:-45;
+                            return <text className="xxx" x={x} y="-350" transform={rotation}>{index + 1}</text>
+                        })}
 
-                        <line className="major" y1="44" y2="48" transform="rotate(0)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(30)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(60)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(90)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(120)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(148)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(180)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(210)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(240)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(270)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(300)"> </line>
-                        <line className="major" y1="44" y2="48" transform="rotate(330)"> </line>
+                        { new Array(60).fill('').map((_, index) => {
+                            const rotation = `rotate(${index * 360 / 60})`;
+                            return <line className="minutes" y1={y1} y2={y1 + size} transform={rotation} stroke-linecap="round"> </line>
+                        })}
 
-                        <line className="hour" y1="1" y2="-25" transform={hour}> </line>
+                        { new Array(12).fill('').map((_, index) => {
+                            const rotation = `rotate(${index * 360 / 12})`;
+                            return <line className="hours" y1={y1} y2={y1 + size}  transform={rotation} stroke-linecap="round"> </line>
+                        })}
 
-                        <line className="minute" y1="1" y2="-32" transform={minute}> </line>
+                        <line className="hour" y1="10" y2="-250" transform={hour} stroke-linecap="round"> </line>
+
+                        <line className="minute" y1="10" y2="-320" transform={minute} stroke-linecap="round"> </line>
 
                         <g transform={second}>
-                            <line className="second" y1="10" y2="-38"> </line>
-                            <line className="second-counterweight" y1="10" y2="2"> </line>
+                            <line className="second" y1="100" y2="-380" stroke-linecap="round"> </line>
+                            <line className="second-counterweight" y1="100" y2="20" stroke-linecap="round"> </line>
                         </g>
                     </g>
                 </svg>

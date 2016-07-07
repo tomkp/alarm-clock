@@ -44,13 +44,19 @@ class Timer extends React.Component {
                 (isDay ? 'day ' :
                     (isEvening ? 'evening ' : 'night ')));
 
+        /*return (
+         <div className={'timer ' + timeOfDay} onClick={() => window.location.reload()}>
+         <div className="qqq">
+         <Analog time={this.state.time} />
+         <Digital time={this.state.time} />
+         </div>
+         <Progress minute={minute}/>
+         </div>
+         );*/
+
         return (
             <div className={'timer ' + timeOfDay} onClick={() => window.location.reload()}>
-                <div className="qqq">
-                    <Analog time={this.state.time} />
-                    <Digital time={this.state.time} />
-                </div>
-                <Progress minute={minute}/>
+                <Analog time={this.state.time} />
             </div>
         );
     }
